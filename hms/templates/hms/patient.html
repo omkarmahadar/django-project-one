@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block body%}
+	<div class="container">
+		<h1>in Patient</h1>
+
+		<form class="contact-form" method="POST" action="/patient_data_submit/">
+		{% csrf_token %}
+			
+			<table>
+				<tr>
+					<!-- First  Name -->
+					<td>
+						<label for="patient_fname">First name:</label>
+					</td>
+					<td>
+						<input type="text" id="patient_fname" name="patient_fname"><br><br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!-- Last Name -->
+						<label for="patient_lname">Last name:</label>
+					</td>
+					<td>
+						<input type="text" id="patient_lname" name="patient_lname"><br><br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!-- Age -->
+						<label for="patient_age">Age:  </label>
+					</td>
+					<td>
+						<input type="number" id="patient_age" name="patient_age"><br><br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!-- Patient Phone Number -->
+						<label for="patient_phone_no">Patient Phone Number:</label>
+					</td>
+					<td>
+						<input type="number" id="patient_phone_no" name="patient_phone_no"><br><br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!-- Patient Relative Phone Number -->
+						<label for="relative_phone_no">Relative Phone Number:</label>
+					</td>
+					<td>
+						<input type="number" id="relative_phone_no" name="relative_phone_no"><br><br>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!-- Patient Diagnosis Type -->
+						<label for="patient_diagnosis">Diagnosis Type:</label>
+					</td>
+					<td>
+						<input type="text" id="patient_diagnosis" name="patient_diagnosis"><br><br>
+					</td>
+				</tr>
+			</table>
+				<button class="btn btn-success" type="submit">Submit</button>
+		</form>
+		<br>
+		<a href="{% url 'hms:patient_list' %}">
+	        <button type="button" class="btn btn-primary btn-lg">Patient List </button>
+	    </a>
+	</div>
+{% endblock %}
